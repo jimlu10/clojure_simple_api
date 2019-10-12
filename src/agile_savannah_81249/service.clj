@@ -12,7 +12,7 @@
 
 (defn home-page
   [request]
-  (ring-resp/response "Hello from heroku lans!"))
+  (ring-resp/response "Hello World!"))
 
 ;; Defines "/" and "/about" routes with their associated :get handlers.
 ;; The interceptors defined after the verb map (e.g., {:get home-page}
@@ -68,7 +68,7 @@
               ;;  This can also be your own chain provider/server-fn -- http://pedestal.io/reference/architecture-overview#_chain_provider
               ::http/type :jetty
               ;;::http/host "localhost"
-              ::http/port (Integer. (or (System/getenv "PORT") 5000))
+              ::http/port 8080
               ;; Options to pass to the container (Jetty)
               ::http/container-options {:h2c? true
                                         :h2? false
